@@ -3,10 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel ="stylesheet" type="text/css"  href="../style/login.css">
+    <title>Log In</title>
 </head>
 <body>
-    
+    <div class="box">
+        <h2>LOGIN ACCOUNT</h2>
+        <form>
+            <div class="input-box">
+                <input type="text" name="email" placeholder="Email" >
+            </div>
+            <div class="input-box">
+                <input type="password" name="password" placeholder="Password">
+            </div>
+            <div class="submit-box">
+                <button type="submit" name="submit">Log in Account</button>
+            </div>
+            <p>Don't have an account? <a href="register.php">Register here</a></p>
+        </form>        
+    </div>
 </body>
 </html>
 
