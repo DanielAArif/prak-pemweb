@@ -1,16 +1,26 @@
 <?php
     include("koneksi.php");
-    session_start();
     if(isset($_POST['submit'])){
         $username = $_POST['username'];
+        $email = $_POST['email'];
         $password = $_POST['password'];
-        $gender = $_POST['gender'];
-        $tanggal_lahir = $_POST['tanggal_lahir'];
-        $alamat = $_POST['alamat'];
+        $confirm_password = $_POST['confirm_password'];
 
-        $query = "INSERT INTO user(username,password,gender,tanggal_lahir,alamat) VALUES ('$username','$password','$gender','$tanggal_lahir','$alamat')";
-        $result = mysqli_query($koneksi,$query);
-        header("Location: login.php");
+        include("koneksi.php");
+
+        if ($password === $confirm_password) {
+        
+            $query = "INSERT INTO user(username, email, password) VALUES ('$username','$email','$password')";
+            $result = mysqli_query($koneksi, $query);
+            if($result){
+                header("Location: login.php");
+                exit;
+            }else {
+                echo "gagal Menambahkan user";
+            }
+        }else {
+            echo "kata sandi yang anda masukkan salah";
+        }
     }
 ?>
 
@@ -25,7 +35,7 @@
 <body>
     <div class="box">
         <h2>CREATE NEW ACCOUNT</h2>
-        <form>
+        <form method="POST">
         <div class="input-box">
                 <input type="text" name="username" placeholder="Username" >
             </div>
