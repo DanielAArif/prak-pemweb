@@ -1,25 +1,23 @@
 <?php
     include("koneksi.php");
     if(isset($_POST['submit'])){
-        $username = $_POST['username'];
+        $email = $_POST['email'];
         $password = $_POST['password'];
 
-        $query = "SELECT * FROM user where username='$username'";
+        $query = "SELECT * FROM user where email='$email'";
         $result = mysqli_query($koneksi,$query);
 
         if($result && mysqli_num_rows($result) > 0){
             $user = mysqli_fetch_assoc($result);
-            $storedpassword = $user['password'];
-            
-                session_start();
-                $_SESSION['id'] = ['id'];
-                $_SESSION['username'] = ['username'];
-                $_SESSION['password'] = ['password'];
-                header("Location: index.php");
-                exit;
-            
+            session_start();
+            $_SESSION['id'] = $user['id'];
+            $_SESSION['username'] = $user['username'];
+            $_SESSION['email'] = $user['email'];
+            $_SESSION['password'] = $user['password'];
+            header("Location: index.php");
+            exit;
         }else {
-            echo "username tidak ditemukan";
+            echo "email tidak ditemukan";
         }}
 ?>
 
@@ -34,7 +32,7 @@
 <body>
     <div class="box">
         <h2>LOGIN ACCOUNT</h2>
-        <form>
+        <form method="POST">
             <div class="input-box">
                 <input type="text" name="email" placeholder="Email" >
             </div>
