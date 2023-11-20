@@ -7,16 +7,6 @@
     <title>GSW-Profile</title>
 </head>
 <body>
-    <nav class="menu">
-        <ul>
-            <li><a href="logout.php" style="display: flex; margin-right: 600px;">Logout</a></li>
-            <li><a href="home.php">Beranda</a></li>
-            <li><a href="player.php">Players</a></li>
-            <li><a href="berita.php">Berita</a></li>
-            <li><a href="video.php">Video</a></li>
-            <li><a href="profil.php"><img src="../style/profil.png"/></a></li>
-        </ul>
-    </nav>
     <div class="box" style="height: 700px">
         <div class="account-info">
             <h2>ACCOUNT INFORMATION</h2>

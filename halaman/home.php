@@ -41,14 +41,26 @@
         </table>
     </div>
     <div class="index-vids">
-        <table>
+        <table cellspacing="10">
             <tr>
-                <td class="vids-pic"><a href="video.php"><img src="" /></a></td>
-                <td class="vids-pic"><a href="video.php"><img src="" /></a></td>
-            </tr>
-            <tr>
-                <td class="vids-title" valign="top">Klay Thompson Stays Ice Cold in Thunder Loss</td>
-                <td class="vids-title" valign="top">Draymond Green Gets Called Out By Warriors Coach Steve Kerr</td>
+                <td class="vids-pic">
+                <iframe width="400" height="225" src="https://www.youtube.com/embed/ajKBVMmPzd4?si=BN8ZRJGaiOKhhCls" title="YouTube video player"
+                    frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                    allowfullscreen>
+                </iframe>
+                </td>
+                <td class="vids-pic">
+                <iframe width="400" height="225" src="https://www.youtube.com/embed/JrPyV4hBAR8?si=RH-4GUbtaYGLiuk1" title="YouTube video player"
+                    frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowfullscreen>
+                </iframe>
+                </td>
+                <td class="vids-pic">
+                <iframe width="400" height="225" src="https://www.youtube.com/embed/o5baQNP_y60?si=gjS4O069Eh-RAaE3" title="YouTube video player"
+                    frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowfullscreen>
+                </iframe>
+                </td>
             </tr>
         </table>
         <a href="video.php" class="vids-button" style="box-shadow: 10px 10px 10px rgba(0,0,0,0.25);">More Videos</a>
