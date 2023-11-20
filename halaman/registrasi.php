@@ -35,7 +35,7 @@
 <body>
     <div class="box">
         <h2>CREATE NEW ACCOUNT</h2>
-        <form method="POST">
+        <form name="formPendaftaran" method="POST" onsubmit="return validateForm()">
         <div class="input-box">
                 <input type="text" name="username" placeholder="Username" >
             </div>
@@ -46,7 +46,7 @@
                 <input type="password" name="password" placeholder="Password">
             </div>
             <div class="input-box">
-                <input type="text" name="confirm_password" placeholder="Confirm Password" >
+                <input type="password" name="confirm_password" placeholder="Confirm Password" >
             </div>
             <div class="submit-box">
                 <button type="submit" name="submit">Sign Up</button>
@@ -54,5 +54,34 @@
             <p>Already have an account? <a href="login.php" style="color: #BE3144; text-decoration: none;">Log in</a></p>
         </form>        
     </div>
+    <script>
+        function validateForm() {
+            if (document.forms["formPendaftaran"]["username"].value == "") {
+                alert("Username Tidak Boleh Kosong");
+                document.forms["formPendaftaran"]["username"].focus();
+                return false;
+            }
+            if (document.forms["formPendaftaran"]["email"].value == "") {
+                alert("Email Tidak Boleh Kosong");
+                document.forms["formPendaftaran"]["email"].focus();
+                return false;
+            }
+            if (document.forms["formPendaftaran"]["password"].value == "") {
+                alert("Password Tidak Boleh Kosong");
+                document.forms["formPendaftaran"]["password"].focus();
+                return false;
+            }
+            if (document.forms["formPendaftaran"]["confirm_password"].value == "") {
+                alert("Konfirmasi Password Tidak Boleh Kosong");
+                document.forms["formPendaftaran"]["confirm_password"].focus();
+                return false;
+            }
+            if(document.forms["formPendaftaran"]["password"].value != document.forms["formPendaftaran"]["confirm_password"].value){
+                alert("Password Tidak Sama");
+                document.forms["formPendaftaran"]["confirm_password"].focus();
+                return false;
+            }
+        }
+    </script>
 </body>
 </html>

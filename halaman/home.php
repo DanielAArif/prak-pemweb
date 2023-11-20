@@ -14,11 +14,12 @@
 <body>
     <nav class="menu">
         <ul>
-            <li><a href="halaman/index.php">Beranda</a></li>
-            <li><a href="halaman/player.php">Players</a></li>
-            <li><a href="halaman/berita.php">Berita</a></li>
-            <li><a href="halaman/video.php">Video</a></li>
-            <li><a href="halaman/profil.php"><img src="../style/profil.png"/></a></li>
+            <li><a href="logout.php" style="display: flex; margin-right: 600px;">Logout</a></li>
+            <li><a href="home.php">Beranda</a></li>
+            <li><a href="player.php">Players</a></li>
+            <li><a href="berita.php">Berita</a></li>
+            <li><a href="video.php">Video</a></li>
+            <li><a href="profil.php"><img src="../style/profil.png"/></a></li>
         </ul>
     </nav>
     <div class="title">
@@ -35,8 +36,8 @@
                 <td class="news-title" valign="top">Draymond Green Gets Called Out By Warriors Coach Steve Kerr</td>
             </tr>
             <tr>
-                <td class="news-button"><a href="berita1.php">Read More</a></td>
-                <td class="news-button"><a href="berita2.php">Read More</a></td>
+                <td class="news-button"><a href="berita1.php" class="tombol" style="box-shadow: 10px 10px 10px rgba(0,0,0,0.25);">Read More</a></td>
+                <td class="news-button"><a href="berita2.php" class="tombol" style="box-shadow: 10px 10px 10px rgba(0,0,0,0.25);">Read More</a></td>
             </tr>
         </table>
     </div>
@@ -51,7 +52,7 @@
                 <td class="vids-title" valign="top">Draymond Green Gets Called Out By Warriors Coach Steve Kerr</td>
             </tr>
         </table>
-        <a href="video.php" class="vids-button">More Videos</a>
+        <a href="video.php" class="vids-button" style="box-shadow: 10px 10px 10px rgba(0,0,0,0.25);">More Videos</a>
     </div>
     <div class="footer">
         <p>© 2020 NBA Media Ventures, LLC. All rights reserved</p>

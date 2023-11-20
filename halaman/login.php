@@ -14,7 +14,7 @@
             $_SESSION['username'] = $user['username'];
             $_SESSION['email'] = $user['email'];
             $_SESSION['password'] = $user['password'];
-            header("Location: index.php");
+            header("Location: home.php");
             exit;
         }else {
             echo "email tidak ditemukan";
@@ -32,7 +32,7 @@
 <body>
     <div class="box">
         <h2>LOGIN ACCOUNT</h2>
-        <form method="POST">
+        <form name="formMasuk" method="POST" onsubmit="return validateForm()">
             <div class="input-box">
                 <input type="text" name="email" placeholder="Email" >
             </div>
@@ -45,5 +45,19 @@
             <p>Don't have an account? <a href="registrasi.php" style="color: #BE3144; text-decoration: none;">Register here</a></p>
         </form>        
     </div>
+    <script>
+        function validateForm() {
+            if (document.forms["formMasuk"]["email"].value == "") {
+                alert("Email Tidak Boleh Kosong");
+                document.forms["formMasuk"]["email"].focus();
+                return false;
+            }
+            if (document.forms["formMasuk"]["password"].value == "") {
+                alert("Password Tidak Boleh Kosong");
+                document.forms["formMasuk"]["password"].focus();
+                return false;
+            }
+        }
+    </script>
 </body>
 </html>
