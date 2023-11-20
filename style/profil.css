@@ -14,6 +14,45 @@ body{
     justify-content: center;
     align-items: center;
     min-height: 100vh;
+    max-width: fit-content;
+    height: fit-content;
+    margin: 0 auto;
+    background-color: black;
+}
+.menu{
+    width: 1440px;
+    height: 88px;
+    background-color: #141E46;
+    display: flex;
+    box-shadow: outset 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+.menu ul{
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 20px;
+    width: 100%;
+    justify-content: right;
+    align-items: center;
+}
+.menu ul li{
+    margin: 0 20px;
+    font-family: Jaldi, sans-serif;
+    font-style: normal;
+    font-size: 32px;
+    line-height: 54px;
+    font-weight: 400;
+}
+.menu a{
+    text-decoration: none;
+    color: white;
+}
+.menu img{
+    width: 58px;
+    height: 58px;
+    display: flex;
+    align-items: center;
+    color: white;
 }
 .box{
     width: 915px;
@@ -99,7 +138,7 @@ body{
 .submit-box button{
     text-align: center;
     font-size: larger;
-    padding: 15px 70px;
+    padding: 15px 30px;
     background: #BE3144;
     border: none;
     outline: none;
