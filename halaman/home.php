@@ -8,7 +8,7 @@
 <head>
     <meta charset="UTF-8">
     <title>GSW - Homepage</title>
-    <link rel="stylesheet" type="text/css" href="../style/index.css">
+    <link rel="stylesheet" type="text/css" href="../style/home.css">
     <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
 </head>
 <body>
