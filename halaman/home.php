@@ -12,8 +12,8 @@
 </head>
 <body>
     <nav class="menu">
+        <a href="logout.php" class="logout-button">Logout</a>
         <ul>
-            <li><a href="logout.php" style="display: flex; margin-right: 600px;">Logout</a></li>
             <li><a href="home.php">Beranda</a></li>
             <li><a href="player.php">Players</a></li>
             <li><a href="berita.php">Berita</a></li>

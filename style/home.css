@@ -1,3 +1,9 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Jaldi, sans-serif;
+}
 body{
     width: 1440px;
     max-width: fit-content;
@@ -39,6 +45,24 @@ body{
     display: flex;
     align-items: center;
     color: white;
+}
+.logout-button{
+    width: 106px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    margin-top: 23px;
+    margin-left: 19px;
+    font-family: Jaldi, sans-serif;
+    font-style: normal;
+    font-size: 20px;
+    line-height: 38px;
+    font-weight: 400;
+    color: white;
+    background: #BE3144;
+    border-radius: 25px;
+    padding: 10px 20px;
+    cursor: pointer;
 }
 .title{
     width: 1440px;

@@ -7,6 +7,17 @@
     <title>GSW-Profile</title>
 </head>
 <body>
+    <nav class="menu">
+        <a href="logout.php" class="logout-button">Logout</a>
+        <ul>
+            <li><a href="home.php">Beranda</a></li>
+            <li><a href="player.php">Players</a></li>
+            <li><a href="berita.php">Berita</a></li>
+            <li><a href="video.php">Video</a></li>
+            <li><a href="profil.php"><img src="../style/profil.png"/></a></li>
+        </ul>
+    </nav>
+    <div class="bg">
     <div class="box" style="height: 700px">
         <div class="account-info">
             <h2>ACCOUNT INFORMATION</h2>
@@ -34,6 +45,7 @@
                 <div class="submit-box"><button type="submit" name="submit" style="padding: 15px 40px;">Confirm</button></div>
             </form>
         </div>
+    </div>
     </div>
 </div>
 <script>
