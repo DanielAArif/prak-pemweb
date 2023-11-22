@@ -16,7 +16,6 @@ body{
     height: 88px;
     background-color: #141E46;
     display: flex;
-    box-shadow: outset 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 .menu ul{
     display: flex;
@@ -34,17 +33,6 @@ body{
     font-size: 32px;
     line-height: 54px;
     font-weight: 400;
-}
-.menu a{
-    text-decoration: none;
-    color: white;
-}
-.menu img{
-    width: 58px;
-    height: 58px;
-    display: flex;
-    align-items: center;
-    color: white;
 }
 .logout-button{
     width: 106px;
@@ -64,10 +52,21 @@ body{
     padding: 10px 20px;
     cursor: pointer;
 }
+.menu a{
+    text-decoration: none;
+    color: white;
+}
+.menu img{
+    width: 58px;
+    height: 58px;
+    display: flex;
+    align-items: center;
+    color: white;
+}
 .title{
     width: 1440px;
     height: 720px;
-    background-image: url(bg_index.jpg);
+    background-image: url(../gambar/bg_index.jpg);
     background-repeat: no-repeat;
     background-size: 1440px 720px;
     background-attachment: local;
@@ -110,8 +109,10 @@ body{
     background-color: #F05941;
     color: white;
     border: none;
-    border-radius: 5px;
-    font-size: 32px;
+    border-radius: 10px;
+    font-size: 30px;
+    font-weight: 400;
+    line-height: 54px;
     justify-content: center;
     align-items: center;
     text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
@@ -142,13 +143,15 @@ body{
     text-decoration: none;
     margin: auto;
     display: flex;
-    width: 176px;
+    width: 190px;
     height: 67px;
     background-color: #F05941;
     color: white;
     border: none;
-    border-radius: 5px;
-    font-size: 32px;
+    border-radius: 10px;
+    font-size: 30px;
+    font-weight: 400;
+    line-height: 54px;
     justify-content: center;
     align-items: center;
 }

@@ -14,7 +14,7 @@
             <li><a href="player.php">Players</a></li>
             <li><a href="berita.php">Berita</a></li>
             <li><a href="video.php">Video</a></li>
-            <li><a href="profil.php"><img src="../style/profil.png"/></a></li>
+            <li><a href="profil.php"><img src="../gambar/profil.png"/></a></li>
         </ul>
     </nav>
     <div class="bg">

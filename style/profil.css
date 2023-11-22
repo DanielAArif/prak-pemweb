@@ -18,7 +18,7 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
-    background-image: url(bg_logreg.jpg);
+    background-image: url(../gambar/bg_logreg.jpg);
     background-repeat: no-repeat;
     background-size: 1440px 936px;
     background-attachment: local;

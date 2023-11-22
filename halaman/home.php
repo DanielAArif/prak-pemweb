@@ -7,8 +7,9 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GSW - Homepage</title>
-    <link rel="stylesheet" type="text/css" href="../style/home.css">
+    <link rel="stylesheet" type="text/css" href="../style/beranda.css">
 </head>
 <body>
     <nav class="menu">
@@ -18,25 +19,27 @@
             <li><a href="player.php">Players</a></li>
             <li><a href="berita.php">Berita</a></li>
             <li><a href="video.php">Video</a></li>
-            <li><a href="profil.php"><img src="../style/profil.png"/></a></li>
+            <li><a href="profil.php"><img src="../gambar/profil.png"/></a></li>
         </ul>
     </nav>
     <div class="title">
 
     </div>
     <div class="index-news">
-        <table>
+        <table cellspacing="10">
             <tr>
-                <td class="news-pic"><a href="berita1.php"><img src="" /></a></td>
-                <td class="news-pic"><a href="berita2.php"><img src="" /></a></td>
+                <td class="news-pic"><img src="../gambar/berita1.jpg" width="600" height="330"/></td>
+                <td class="news-pic"><img src="../gambar/berita2.webp" width="600" height="330"/></td>
             </tr>
             <tr>
                 <td class="news-title" valign="top">Klay Thompson Stays Ice Cold in Thunder Loss</td>
                 <td class="news-title" valign="top">Draymond Green Gets Called Out By Warriors Coach Steve Kerr</td>
             </tr>
             <tr>
-                <td class="news-button"><a href="berita1.php" class="tombol" style="box-shadow: 10px 10px 10px rgba(0,0,0,0.25);">Read More</a></td>
-                <td class="news-button"><a href="berita2.php" class="tombol" style="box-shadow: 10px 10px 10px rgba(0,0,0,0.25);">Read More</a></td>
+                <td class="news-button"><a href="https://www.yardbarker.com/nba/articles/klay_thompson_stays_ice_cold_in_thunder_loss/s1_17149_39548159"
+                class="tombol" style="box-shadow: 10px 10px 10px rgba(0,0,0,0.25);">Read More</a></td>
+                <td class="news-button"><a href="https://www.yardbarker.com/nba/articles/draymond_green_gets_called_out_by_warriors_coach_steve_kerr/s1_17149_39548294"
+                class="tombol" style="box-shadow: 10px 10px 10px rgba(0,0,0,0.25);">Read More</a></td>
             </tr>
         </table>
     </div>
