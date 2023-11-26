@@ -1,3 +1,45 @@
+<?php 
+    include("koneksi.php");
+    session_start();
+
+    if(isset($_POST['editid'])){
+        if (isset($_POST['update'])){
+            $no_punggung = $_POST['number'];
+            $nama = $_POST['name'];
+            $role = $_POST['position'];
+            $negara = $_POST['country'];
+            $umur = $_POST['age'];
+            $height = $_POST['tinggibadan'];
+            $weight = $_POST['beratbadan'];
+            $foto = $_POST['pic'];
+
+            $query = "UPDATE `player` SET no_punggung='$number', nama='$name', role='$position', negara='$country, umur='$age', tinggibadan='$height', beratbadan='$weight', foto='$pic'  WHERE no_punggung='$number'";
+            $result = mysqli_query($koneksi, $query);
+                if ($result) {
+                    echo "Edit successful";
+                    header("Location: player.php");
+                } else {
+                    echo "Pembaruan gagal: " . mysqli_error($koneksi);
+                }
+        }
+    }
+        if(isset($_POST['editid'])){
+            if(isset($_POST['delete'])) {
+                $no_punggung = $_POST['number'];
+
+                $query = "DELETE FROM player WHERE no_punggung= '$no_punggung'";
+                $result = mysqli_query($koneksi, $query);
+                if($result) {
+                    echo "<script>alert('Berhasil menghapus pemain!'); window.location.href = 'player.php'</script>";
+                    exit();
+                } else {
+                    echo "<script>alert('Gagal menghapus pemain!');";        
+                }
+            }
+        }
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -63,12 +105,12 @@
                     <div class="dot">:</div>
                     <div id="pic-box"><input type="file" name="pic" class="pic-box"><br/></div>
                 </div>
+                <div class="submit-box">
+                    <button type="submit" name="update" style="padding: 15px 30px;">Update</button>
+                    <button type="submit" name="delete" style="padding: 15px 30px;">Delete</button>
+                </div>
             </form>
             <br>
-            <div class="submit-box">
-                <button type="submit" name="update" style="padding: 15px 30px;">Update</button>
-                <button type="submit" name="delete" style="padding: 15px 30px;">Delete</button>
-            </div>
         </div>
     </div>
     </div>
