@@ -1,7 +1,20 @@
-<?php 
-    session_start();
-?>
+<?php
+include("koneksi.php");
+session_start();
 
+
+if(!isset($_SESSION['login'])){
+    header("location: login.php");
+    exit;
+}
+
+// Mengambil data semua pemain
+$query = "SELECT * FROM `pemain`";
+$result = mysqli_query($koneksi, $query);
+
+// Menutup koneksi database setelah data diambil
+mysqli_close($koneksi);
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -26,29 +39,41 @@
     <div class="title">
         <h1>Players</h1>
     </div>
+
     <div class="main-table">
         <div class="player-table">
-            <table border="1">
+        <?php
+        // Menampilkan informasi semua pemain dengan while loop
+        while ($data_pemain = mysqli_fetch_assoc($result)) {
+    ?>
+            <table >
                 <tr height="60px">
-                    <th class="player-pic" rowspan="4" width="250px"><img src="../gambar/curry.webp" /></th>
+                    <th class="player-pic" rowspan="4" width="250px"><img src="../gambar/gambarpemain/<?php echo $data_pemain['foto'] ?>" /></th>
                     <td><p>Player Details:</p></td>
                 </tr>
                 <tr height="60px">
-                    <td><strong>Name : </strong><p>Stephen Curry (30)</p></td>
-                    <td><strong>Position : </strong><p>Point Guard</p></td>
+                    <td><strong>Name : </strong><p><?php echo $data_pemain['nama'] . "(" . $data_pemain['no_punggung'] . ")"; ?></p></td>
+                    <td><strong>Position : </strong><p><?php echo $data_pemain['role']; ?></p></td>
                 </tr>
                 <tr height="60px">
-                    <td><strong>Country : </strong><p>USA</p></td>
-                    <td><strong>Height : </strong><p>6'3"</p></td>
+                    <td><strong>Country : </strong><p><?php echo $data_pemain['negara']; ?></p></td>
+                    <td><strong>Height : </strong><p><?php echo $data_pemain['tinggibadan']; ?></p></td>
                 </tr>
                 <tr height="60px">
-                    <td><strong>Age : </strong><p>35</p></td>
-                    <td><strong>Weight : </strong><p>185 lbs</p></td>
+                    <td><strong>Age : </strong><p><?php echo $data_pemain['umur']; ?></p></td>
+                    <td><strong>Weight : </strong><p><?php echo $data_pemain['beratbadan']; ?></p></td>
                 </tr>
             </table>
+            
         </div>
-        <button><a href="update_player.php">Edit</a></button>
+        <div><button><a href="update_player.php?editid=<?php echo $data_pemain['no_punggung']; ?>">Edit</a></button></div>
+        
     </div>
+
+    <?php
+    }
+    ?>
+
     <div class="footer">
         <div class="social">
             <a href="https://instagram.com/warriors?igshid=NGVhN2U2NjQ0Yg==" target="_blank"><img src="../gambar/instagram.png"/></a>
