@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GSW - Homepage</title>
+    <title>GSW - Videos Gallery</title>
+    <link rel="icon" href="../gambar/title.png">
     <link rel="stylesheet" type="text/css" href="../style/video.css">
 </head>
 <body>
@@ -13,13 +14,12 @@
         <ul>
             <li><a href="home.php">Beranda</a></li>
             <li><a href="player.php">Players</a></li>
-            <li><a href="berita.php">Berita</a></li>
+            <li><a href="home.php#berita">Berita</a></li>
             <li><a href="video.php">Video</a></li>
-            <li><a href="profil.php"><img src="../gambar/profil.png"/></a></li>
+            <li><a href="profil.php"><img src="../gambar/profil1.png"/></a></li>
         </ul>
     </nav>
-    <div class="title"></div>
-    <div class="text-title">
+    <div class="title">
         <p>VIDEOS GALLERY</p>
     </div>
     <div class="vids-table">
@@ -67,7 +67,12 @@
     </table>
     </div>
     <div class="footer">
-        <p>© 2021 GSW. All Rights Reserved.</p>
+        <div class="social">
+            <a href="https://instagram.com/warriors?igshid=NGVhN2U2NjQ0Yg==" target="_blank"><img src="../gambar/instagram.png"/></a>
+            <a href="https://twitter.com/warriors" target="_blank"><img src="../gambar/twitter.png"/></a>
+            <a href="https://www.youtube.com/user/GoldenStateWarriors" target="_blank"><img src="../gambar/youtube.png"/></a>
+        </div>
+        <p>© 2020 NBA Media Ventures, LLC. All rights reserved</p>
     </div>
     </div>
 </body>

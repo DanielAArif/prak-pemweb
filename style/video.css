@@ -80,9 +80,7 @@ body{
     margin-left: 25px;
     width: 1397px;
     height: 297px;
-    background-image: url(../gambar/berita2.webp);
-    filter: blur(8px);
-    -webkit-filter: blur(8px);
+    background-image: url(../gambar/Frame1.png);
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: local;
@@ -91,10 +89,7 @@ body{
     justify-content: center;
     align-items: center;
 }
-.text-title p{
-    position: absolute;
-    top: 200px;
-    left: 675px;
+.title p{
     text-align: center;
     font-family: Jaldi, sans-serif;
     font-style: normal;
@@ -110,7 +105,11 @@ body{
     margin-bottom: 30px;
     width: 1334px;
     height: 510px;
-    background-color: #F05941;
+    background-image: url(../gambar/Frame2.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: local;
+    background-position: center;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -126,13 +125,18 @@ body{
 }
 .footer{
     width: 1440px;
-    height: 88px;
+    height: 314px;
     background-color: #141E46;
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
 .footer p{
+    text-align: center;
+    margin-top: 150px;
     color: white;
     font-size: 24px;
+}
+.social{
+    width: 1440px;
+}
+.social img{
+    margin: 20px;
 }

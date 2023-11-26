@@ -31,6 +31,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel ="stylesheet" type="text/css"  href="../style/registrasi.css">
     <title>Sign Up</title>
+    <link rel="icon" href="../gambar/title.png">
 </head>
 <body>
     <div class="box">

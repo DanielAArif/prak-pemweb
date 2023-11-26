@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel ="stylesheet" type="text/css"  href="../style/profil.css">
-    <title>GSW-Profile</title>
+    <title>GSW - Profile</title>
+    <link rel="icon" href="../gambar/title.png">
 </head>
 <body>
     <nav class="menu">
@@ -12,9 +13,9 @@
         <ul>
             <li><a href="home.php">Beranda</a></li>
             <li><a href="player.php">Players</a></li>
-            <li><a href="berita.php">Berita</a></li>
+            <li><a href="home.php#berita">Berita</a></li>
             <li><a href="video.php">Video</a></li>
-            <li><a href="profil.php"><img src="../gambar/profil.png"/></a></li>
+            <li><a href="profil.php"><img src="../gambar/profil1.png"/></a></li>
         </ul>
     </nav>
     <div class="bg">
