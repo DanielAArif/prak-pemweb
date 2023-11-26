@@ -1,5 +1,12 @@
 <?php
     include("koneksi.php");
+    session_start();
+
+    if(isset($_SESSION['login'])){
+        header("location: home.php");
+        exit;
+    }
+
     if(isset($_POST['submit'])){
         $email = $_POST['email'];
         $password = $_POST['password'];
@@ -14,6 +21,7 @@
             $_SESSION['username'] = $user['username'];
             $_SESSION['email'] = $user['email'];
             $_SESSION['password'] = $user['password'];
+            $_SESSION['login'] = true;
             header("Location: home.php");
             exit;
         }else {
