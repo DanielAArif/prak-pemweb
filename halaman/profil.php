@@ -2,8 +2,11 @@
     include("koneksi.php");
     session_start();
 
-    //delete
-    // Cek apakah formulir dikirimkan untuk menghapus akun
+    if(!isset($_SESSION['login'])){
+        header("location: login.php");
+        exit;
+    }
+
     if(isset($_POST['hapus_akun'])) {
         $id = $_POST['id_account'];
 
