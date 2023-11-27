@@ -88,7 +88,7 @@
             <form method="POST" action="<?php $_SERVER['PHP_SELF']; ?>">
                 <div class="input-pass"><input type="password" name="password" placeholder="Password"><br/></div>
                 <div class="input-pass"><input type="password" name="confirm_password" placeholder="Confirm Password"><br/></div>
-                <div class="submit-box"><button type="submit" name="submit" style="padding: 15px 40px;" onclick="return confirm('Are you sure want to delete account?')">Confirm</button></div>
+                <div class="submit-box"><button type="submit" name="submit" style="padding: 15px 40px;" onclick="return confirm('Are you sure want to update your account password?')">Confirm</button></div>
             </form>
         </div>
 
