@@ -45,7 +45,8 @@
                 <input type="text" name="email" placeholder="Email" >
             </div>
             <div class="input-box">
-                <input type="password" name="password" placeholder="Password">
+                <input type="password" name="password" placeholder="Password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*\W).{5,10}"
+                title="Password harus memiliki huruf kapital, huruf kecil, angka, dan karakter unik. Minimal 5 karakter dan maksimal 10 karakter.">
             </div>
             <div class="input-box">
                 <input type="password" name="confirm_password" placeholder="Confirm Password" >

@@ -13,8 +13,9 @@
         $query = "DELETE FROM user WHERE id= '$id'";
         $result = mysqli_query($koneksi, $query);
         if($result) {
-            echo "<script>alert('Berhasil menghapus akun!'); window.location.href = 'login.php'</script>";
-            exit();
+            $_SESSION['login'] = false;
+            session_destroy();
+            header("Location: login.php");
         } else {
             echo "<script>alert('Gagal menghapus akun!');";        
         }
@@ -91,7 +92,7 @@
             <form method="POST" action="<?php $_SERVER['PHP_SELF']; ?>">
                 <div class="input-pass"><input type="password" name="password" placeholder="Password"><br/></div>
                 <div class="input-pass"><input type="password" name="confirm_password" placeholder="Confirm Password"><br/></div>
-                <div class="submit-box"><button type="submit" name="submit" style="padding: 15px 40px;" onclick="return confirm('Are you sure want to delete account?')">Confirm</button></div>
+                <div class="submit-box"><button type="submit" name="submit" style="padding: 15px 40px;" onclick="return confirm('Are you sure want to update your account password?')">Confirm</button></div>
             </form>
         </div>
 
@@ -99,14 +100,5 @@
     </div>
     </div>
 </div>
-<script>
-    function hapus_akun(){
-        if (confirm("Apakah anda yakin ingin menghapus akun ini?") == true) {
-            //PROSES HAPUS AKUN DISINI!
-        } else {
-            window.location.href = "profil.php";
-        }
-    }
-</script>
 </body>
 </html>

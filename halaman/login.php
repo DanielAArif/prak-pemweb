@@ -37,26 +37,6 @@
         echo "<script>alert('username tidak ditemukan!')</script>";  
         }
     }
-    // if(isset($_POST['submit'])){
-    //     $email = $_POST['email'];
-    //     $password = $_POST['password'];
-
-    //     $query = "SELECT * FROM user where email='$email'";
-    //     $result = mysqli_query($koneksi,$query);
-
-    //     if($result && mysqli_num_rows($result) > 0){
-    //         $user = mysqli_fetch_assoc($result);
-    //         session_start();
-    //         $_SESSION['id'] = $user['id'];
-    //         $_SESSION['username'] = $user['username'];
-    //         $_SESSION['email'] = $user['email'];
-    //         $_SESSION['password'] = $user['password'];
-    //         $_SESSION['login'] = true;
-    //         header("Location: home.php");
-    //         exit;
-    //     }else {
-    //         echo "email tidak ditemukan";
-    //     }}
 ?>
 
 <!DOCTYPE html>
@@ -76,7 +56,8 @@
                 <input type="text" name="email" placeholder="Email" >
             </div>
             <div class="input-box">
-                <input type="password" name="password" placeholder="Password">
+                <input type="password" name="password" placeholder="Password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*\W).{5,10}"
+                title="Password harus memiliki huruf kapital, huruf kecil, angka, dan karakter unik. Minimal 5 karakter dan maksimal 10 karakter.">
             </div>
             <div class="submit-box">
                 <button type="submit" name="submit">Log in Account</button>
