@@ -6,27 +6,57 @@
         header("location: home.php");
         exit;
     }
-
-    if(isset($_POST['submit'])){
+    if(isset($_POST['submit'])) {
         $email = $_POST['email'];
         $password = $_POST['password'];
 
-        $query = "SELECT * FROM user where email='$email'";
-        $result = mysqli_query($koneksi,$query);
+        $query = "SELECT * FROM user WHERE email='$email'";
+        $result = mysqli_query($koneksi, $query);
 
         if($result && mysqli_num_rows($result) > 0){
             $user = mysqli_fetch_assoc($result);
-            session_start();
-            $_SESSION['id'] = $user['id'];
-            $_SESSION['username'] = $user['username'];
-            $_SESSION['email'] = $user['email'];
-            $_SESSION['password'] = $user['password'];
-            $_SESSION['login'] = true;
-            header("Location: home.php");
-            exit;
-        }else {
-            echo "email tidak ditemukan";
-        }}
+                if($user['level']=="user"){
+                    $_SESSION['id'] = $user['id'];
+                    $_SESSION['username'] = $user['username'];
+                    $_SESSION['email'] = $user['email'];
+                    $_SESSION['password'] = $user['password'];
+                    $_SESSION['login'] = true;
+                    header("Location: home.php");
+                    exit();
+                }else if($user['level']=="admin"){
+                    $_SESSION['id'] = $user['id'];
+                    $_SESSION['username'] = $user['username'];
+                    $_SESSION['email'] = $user['email'];
+                    $_SESSION['password'] = $user['password'];
+                    header("location: view_player&pemain.php");
+                    exit();
+                }else{
+                    echo "<script>alert('salah!')</script>";   
+                }
+        }else{
+        echo "<script>alert('username tidak ditemukan!')</script>";  
+        }
+    }
+    // if(isset($_POST['submit'])){
+    //     $email = $_POST['email'];
+    //     $password = $_POST['password'];
+
+    //     $query = "SELECT * FROM user where email='$email'";
+    //     $result = mysqli_query($koneksi,$query);
+
+    //     if($result && mysqli_num_rows($result) > 0){
+    //         $user = mysqli_fetch_assoc($result);
+    //         session_start();
+    //         $_SESSION['id'] = $user['id'];
+    //         $_SESSION['username'] = $user['username'];
+    //         $_SESSION['email'] = $user['email'];
+    //         $_SESSION['password'] = $user['password'];
+    //         $_SESSION['login'] = true;
+    //         header("Location: home.php");
+    //         exit;
+    //     }else {
+    //         echo "email tidak ditemukan";
+    //     }}
 ?>
 
 <!DOCTYPE html>
