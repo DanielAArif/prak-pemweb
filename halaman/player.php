@@ -40,12 +40,11 @@ mysqli_close($koneksi);
         <h1>Players</h1>
     </div>
 
-    <div class="main-table">
-        <div class="player-table">
         <?php
         // Menampilkan informasi semua pemain dengan while loop
-        while ($data_pemain = mysqli_fetch_assoc($result)) {
-    ?>
+        while ($data_pemain = mysqli_fetch_assoc($result)) {?>
+    <div class="main-table">
+        <div class="player-table">
             <table >
                 <tr height="60px">
                     <th class="player-pic" rowspan="4" width="250px"><img src="../gambar/gambarpemain/<?php echo $data_pemain['foto'] ?>" /></th>
