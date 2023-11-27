@@ -10,8 +10,9 @@
         $query = "DELETE FROM user WHERE id= '$id'";
         $result = mysqli_query($koneksi, $query);
         if($result) {
-            echo "<script>alert('Berhasil menghapus akun!'); window.location.href = 'login.php'</script>";
-            exit();
+            $_SESSION['login'] = false;
+            session_destroy();
+            header("Location: login.php");
         } else {
             echo "<script>alert('Gagal menghapus akun!');";        
         }
@@ -96,14 +97,5 @@
     </div>
     </div>
 </div>
-<script>
-    function hapus_akun(){
-        if (confirm("Apakah anda yakin ingin menghapus akun ini?") == true) {
-            //PROSES HAPUS AKUN DISINI!
-        } else {
-            window.location.href = "profil.php";
-        }
-    }
-</script>
 </body>
 </html>

@@ -52,6 +52,9 @@ body{
     padding: 10px 20px;
     cursor: pointer;
 }
+.logout-button:hover{
+    background: #241614;
+}
 .menu a{
     text-decoration: none;
     color: white;
@@ -116,8 +119,12 @@ body{
     margin-left: 50px;
     background-color: #F05941;
     border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.301) 10px 10px;
     border: none;
     cursor: pointer;
+}
+.main-table button:hover{
+    background-color: #241614;
 }
 .main-table a{
     font-family: Jaldi, sans-serif;

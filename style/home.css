@@ -52,6 +52,9 @@ body{
     padding: 10px 20px;
     cursor: pointer;
 }
+.logout-button:hover{
+    background: #241614;
+}
 .menu a{
     text-decoration: none;
     color: white;
@@ -128,6 +131,9 @@ body{
     align-items: center;
     text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
+.tombol:hover{
+    background: #241614;
+}
 .index-vids{
     width: 1440px;
     height: 720px;
@@ -165,6 +171,9 @@ body{
     line-height: 54px;
     justify-content: center;
     align-items: center;
+}
+.vids-button:hover{
+    background: #241614;
 }
 .footer{
     width: 1440px;
