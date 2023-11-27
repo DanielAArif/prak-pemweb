@@ -5,12 +5,13 @@
         $email = $_POST['email'];
         $password = $_POST['password'];
         $confirm_password = $_POST['confirm_password'];
+        $level = 'user';
 
         include("koneksi.php");
 
         if ($password === $confirm_password) {
         
-            $query = "INSERT INTO user(username, email, password) VALUES ('$username','$email','$password')";
+            $query = "INSERT INTO user(username, email, password, level) VALUES ('$username','$email','$password','$level')";
             $result = mysqli_query($koneksi, $query);
             if($result){
                 header("Location: login.php");
