@@ -17,7 +17,7 @@
             session_destroy();
             header("Location: login.php");
         } else {
-            echo "<script>alert('Gagal menghapus akun!');";        
+            echo "<script>alert('Failed to delete account!');";        
         }
     }
 
@@ -27,15 +27,15 @@
         $cpassword = $_POST['confirm_password'];
 
         if ($password !== $cpassword) {
-            echo "Passwords dan confirm password tidak sama";
+            echo "Passwords and confirm password does not match!";
         } else {
             $query = "UPDATE `user` SET password='$password' WHERE id='$id'";
             $result = mysqli_query($koneksi, $query);
             if ($result) {
-                echo "<script> alert ('berhasil mengubah password!'); window.location.href = 'profil.php'</script>";
+                echo "<script> alert ('Updating Password is Success!'); window.location.href = 'profil.php'</script>";
                 header("Location: profil.php");
             } else {
-                echo "Pembaruan gagal: " . mysqli_error($koneksi);
+                echo "Update failed: " . mysqli_error($koneksi);
             }
         }
     }
@@ -53,12 +53,12 @@
 </head>
 <body>
     <nav class="menu">
-        <a href="logout.php" class="logout-button">Logout</a>
+        <a href="logout.php" class="logout-button" onclick="return confirm('Are you sure want to logout?')">Logout</a>
         <ul>
-            <li><a href="home.php">Beranda</a></li>
+            <li><a href="home.php">Homepage</a></li>
             <li><a href="player.php">Players</a></li>
-            <li><a href="home.php#berita">Berita</a></li>
-            <li><a href="video.php">Video</a></li>
+            <li><a href="home.php#berita">News</a></li>
+            <li><a href="video.php">Videos</a></li>
             <li><a href="profil.php"><img src="../gambar/profil1.png"/></a></li>
         </ul>
     </nav>
@@ -81,7 +81,7 @@
                     <div class="input-box"><input type="text" name="email" value="<?php echo $_SESSION['email']; ?>" readonly><br/></div>
                 </div>
                 <br>
-                <div class="submit-box"><button type="submit" name="hapus_akun" style="padding: 15px 30px;" onclick="return confirm('Are you sure want to delete account?')">Hapus Akun</button></div>
+                <div class="submit-box"><button type="submit" name="hapus_akun" style="padding: 15px 30px;" onclick="return confirm('Are you sure want to delete account?')">Delete Account</button></div>
                 <hr>
             </form>
 

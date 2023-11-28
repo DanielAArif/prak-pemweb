@@ -6,23 +6,58 @@
 }
 body{
     width: 1440px;
-    height: 1024px;
     max-width: fit-content;
     height: fit-content;
     margin: 0 auto;
     background-color: black;
 }
+.table{
+    text-align: center;
+    text-align: center;
+    border-collapse: collapse;
+    border: 1px solid #000;
+}
+.table th{
+    border: 1px solid #000;
+    padding: 10px 20px;
+    font-size: 20px;
+    font-weight: 400;
+    color: #000;
+}
+.table td{
+    border: 1px solid #000;
+    padding: 10px 20px;
+    font-size: 20px;
+    font-weight: 400;
+    color: #000;
+}
+.table2{
+    width: 95%;
+    text-align: center;
+    text-align: center;
+    border-collapse: collapse;
+    border: 1px solid #000;
+}
+.table2 th{
+    border: 1px solid #000;
+    padding: 10px 20px;
+    font-size: 20px;
+    font-weight: 400;
+    color: #000;
+}
+.table2 td{
+    border: 1px solid #000;
+    padding: 10px 20px;
+    font-size: 20px;
+    font-weight: 400;
+    color: #000;
+}
 .bg{
     width: 1440px;
-    height: 936px;
+    height: fit-content;
     display: flex;
     justify-content: center;
     align-items: center;
-    background-image: url(../gambar/bg_logreg.jpg);
-    background-repeat: no-repeat;
-    background-size: 1440px 936px;
-    background-attachment: local;
-    background-position: center;
 }
 .menu{
     width: 1440px;
@@ -53,6 +88,7 @@ body{
     height: 48px;
     display: flex;
     align-items: center;
+    justify-content: center;
     margin-top: 23px;
     margin-left: 19px;
     font-family: Jaldi, sans-serif;
@@ -69,6 +105,28 @@ body{
 .logout-button:hover{
     background: #241614;
 }
+.back-button{
+    width: 106px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 23px;
+    margin-left: 1286px;
+    font-family: Jaldi, sans-serif;
+    font-style: normal;
+    font-size: 20px;
+    line-height: 38px;
+    font-weight: 400;
+    color: white;
+    background: #BE3144;
+    border-radius: 25px;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+.back-button:hover{
+    background: #241614;
+}
 .menu a{
     text-decoration: none;
     color: white;
@@ -81,14 +139,17 @@ body{
     color: white;
 }
 .box{
-    width: 915px;
-    height: 720px;
+    width: 1440px;
+    height: fit-content;
     border-radius: 10px;
-    background-color: rgb(255, 255, 255, 0.5);
+    background-color: rgba(255, 255, 255, 0.788);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
-.box h2{
-    margin-top: 50px;
-    margin-bottom: 20px;
+.box h1{
+    margin-top: 100px;
+    margin-bottom: 50px;
     color: #000;
     text-align: center;
     font-weight: 500;

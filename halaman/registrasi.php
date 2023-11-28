@@ -17,10 +17,10 @@
                 header("Location: login.php");
                 exit;
             }else {
-                echo "gagal Menambahkan user";
+                echo "Failed to add user";
             }
         }else {
-            echo "kata sandi yang anda masukkan salah";
+            echo "Your password does not match!";
         }
     }
 ?>
@@ -46,7 +46,7 @@
             </div>
             <div class="input-box">
                 <input type="password" name="password" placeholder="Password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*\W).{5,10}"
-                title="Password harus memiliki huruf kapital, huruf kecil, angka, dan karakter unik. Minimal 5 karakter dan maksimal 10 karakter.">
+                title="Passwords must have uppercase letters, lowercase letters, numbers and unique characters. Minimum 5 characters and maximum 10 characters.">
             </div>
             <div class="input-box">
                 <input type="password" name="confirm_password" placeholder="Confirm Password" >
@@ -60,27 +60,27 @@
     <script>
         function validateForm() {
             if (document.forms["formPendaftaran"]["username"].value == "") {
-                alert("Username Tidak Boleh Kosong");
+                alert("Please fill in your Username");
                 document.forms["formPendaftaran"]["username"].focus();
                 return false;
             }
             if (document.forms["formPendaftaran"]["email"].value == "") {
-                alert("Email Tidak Boleh Kosong");
+                alert("Please fill in your Email");
                 document.forms["formPendaftaran"]["email"].focus();
                 return false;
             }
             if (document.forms["formPendaftaran"]["password"].value == "") {
-                alert("Password Tidak Boleh Kosong");
+                alert("Please fill in your Password");
                 document.forms["formPendaftaran"]["password"].focus();
                 return false;
             }
             if (document.forms["formPendaftaran"]["confirm_password"].value == "") {
-                alert("Konfirmasi Password Tidak Boleh Kosong");
+                alert("Please fill in your Password Confirmation");
                 document.forms["formPendaftaran"]["confirm_password"].focus();
                 return false;
             }
             if(document.forms["formPendaftaran"]["password"].value != document.forms["formPendaftaran"]["confirm_password"].value){
-                alert("Password Tidak Sama");
+                alert("Your password does not match!");
                 document.forms["formPendaftaran"]["confirm_password"].focus();
                 return false;
             }

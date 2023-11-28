@@ -19,12 +19,12 @@
 </head>
 <body>
     <nav class="menu">
-        <a href="logout.php" class="logout-button">Logout</a>
+        <a href="logout.php" class="logout-button" onclick="return confirm('Are you sure want to logout?')">Logout</a>
         <ul>
-            <li><a href="home.php">Beranda</a></li>
+            <li><a href="home.php">Homepage</a></li>
             <li><a href="player.php">Players</a></li>
-            <li><a href="#berita">Berita</a></li>
-            <li><a href="video.php">Video</a></li>
+            <li><a href="#berita">News</a></li>
+            <li><a href="video.php">Videos</a></li>
             <li><a href="profil.php"><img src="../gambar/profil1.png"/></a></li>
         </ul>
     </nav>

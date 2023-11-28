@@ -1,11 +1,15 @@
 <?php 
-    include("koneksi.php");
     session_start();
 
     if(!isset($_SESSION['login'])){
         header("location: login.php");
         exit;
     }
+?>
+
+<?php 
+    include("koneksi.php");
+    
     $no_punggung = $_GET['editid'];
     $query = "SELECT * FROM `pemain` WHERE no_punggung='$no_punggung'";
     $result = mysqli_query($koneksi,$query);
@@ -21,29 +25,35 @@
         $umur = $_POST['age'];
         $height = $_POST['height'];
         $weight = $_POST['weight'];
-        $foto = $_POST['pic'];
+        $foto = $_FILES['foto']['name'];
 
-        $query = "UPDATE `pemain` SET no_punggung='$no_punggung', nama='$nama', role='$role', negara='$negara', umur='$umur', tinggibadan='$height', beratbadan='$weight', foto='$foto'  WHERE no_punggung='$no_punggung'";
-        $result = mysqli_query($koneksi, $query);
-            if ($result) {
-                echo "Edit successful";
-                header("Location: player.php");
-            } else {
-                echo "Pembaruan gagal: " . mysqli_error($koneksi);
-            }
+        if($foto!=''){
+            $row = mysqli_fetch_array(mysqli_query($koneksi, "SELECT * from pemain where no_punggung = '$no_punggung'"));
+		    $filegambar = $row['foto'];
+		    unlink($filegambar);
+			$upload = '../gambar/gambarpemain/'.$foto;
+			move_uploaded_file($_FILES['foto']['tmp_name'], $upload);
+			$update = "UPDATE pemain SET no_punggung='$no_punggung', nama='$nama', role='$role', negara='$negara',
+			umur='$umur', tinggibadan='$height', beratbadan='$weight', foto='$upload' WHERE no_punggung='$no_punggung'";
+		}else{
+			$update = "UPDATE pemain SET no_punggung='$no_punggung', nama='$nama', role='$role', negara='$negara',
+			umur='$umur', tinggibadan='$height', beratbadan='$weight' WHERE no_punggung='$no_punggung'";
+		}
+		$query = mysqli_query($koneksi, $update);
+		if($query){
+			?>
+				<script>alert('Data Berhasil Diubah!')
+				document.location="view_player&pemain.php";
+				</script>
+			<?php
+		}else{
+            ?>
+                <script>alert('Data Gagal Diubah!')
+                document.location="view_player&pemain.php";
+                </script>
+            <?php
         }
-        if(isset($_POST['delete'])) {
-            $no_punggung = $_GET['editid'];
-
-            $query = "DELETE FROM pemain WHERE no_punggung= '$no_punggung'";
-            $result = mysqli_query($koneksi, $query);
-            if($result) {
-                echo "<script>alert('Berhasil menghapus pemain!'); window.location.href = 'player.php'</script>";
-                exit();
-            } else {
-                echo "<script>alert('Gagal menghapus pemain!');";        
-            }
-        }
+    }
 ?>
 
 
@@ -52,26 +62,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel ="stylesheet" type="text/css"  href="../style/update_player.css">
+    <link rel ="stylesheet" type="text/css"  href="../style/update_pl.css">
     <title>GSW - Update Player</title>
     <link rel="icon" href="../gambar/title.png">
 </head>
 <body>
     <nav class="menu">
-        <a href="logout.php" class="logout-button">Logout</a>
-        <ul>
-            <li><a href="home.php">Beranda</a></li>
-            <li><a href="player.php">Players</a></li>
-            <li><a href="home.php#berita">Berita</a></li>
-            <li><a href="video.php">Video</a></li>
-            <li><a href="profil.php"><img src="../gambar/profil1.png"/></a></li>
-        </ul>
+        <a href="view_player&pemain.php" class="logout-button">Back</a>
+        <a href="logout.php" class="back-button" onclick="return confirm('Are you sure want to logout?')">Logout</a>
     </nav>
     <div class="bg">
     <div class="box" style="height: 850px">
         <div class="account-info">
             <h2>UPDATE PLAYER DETAILS</h2>
-            <form action="<?php $_SERVER['PHP_SELF']; ?>" method="POST">
+            <form action="<?php $_SERVER['PHP_SELF']; ?>" method="POST" enctype="multipart/form-data">
                 <div class="name">
                     <div class="name_">Name</div>
                     <div class="dot">:</div>
@@ -110,11 +114,10 @@
                 <div class="pic">
                     <div class="pic_">Insert Picture</div>
                     <div class="dot">:</div>
-                    <div id="pic-box"><input type="file" name="pic" class="pic-box" value="<?php echo $data_user['foto']; ?>"><br/></div>
+                    <div id="pic-box"><input type="file" name="foto" class="pic-box"><br/></div>
                 </div>
                 <div class="submit-box">
-                    <button type="submit" name="update" style="padding: 15px 30px;">Update</button>
-                    <button type="submit" name="delete" style="padding: 15px 30px;">Delete</button>
+                    <button type="submit" name="update" style="padding: 15px 30px;" onclick="return confirm('Are you sure want to update?')">Update</button>
                 </div>
             </form>
             <br>

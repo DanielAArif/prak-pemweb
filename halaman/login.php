@@ -28,13 +28,14 @@
                     $_SESSION['username'] = $user['username'];
                     $_SESSION['email'] = $user['email'];
                     $_SESSION['password'] = $user['password'];
+                    $_SESSION['login'] = true;
                     header("location: view_player&pemain.php");
                     exit();
                 }else{
-                    echo "<script>alert('salah!')</script>";   
+                    echo "<script>alert('Wrong!')</script>";   
                 }
         }else{
-        echo "<script>alert('username tidak ditemukan!')</script>";  
+        echo "<script>alert('username not found!')</script>";  
         }
     }
 ?>
@@ -57,7 +58,7 @@
             </div>
             <div class="input-box">
                 <input type="password" name="password" placeholder="Password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*\W).{5,10}"
-                title="Password harus memiliki huruf kapital, huruf kecil, angka, dan karakter unik. Minimal 5 karakter dan maksimal 10 karakter.">
+                title="Passwords must have uppercase letters, lowercase letters, numbers and unique characters. Minimum 5 characters and maximum 10 characters.">
             </div>
             <div class="submit-box">
                 <button type="submit" name="submit">Log in Account</button>
@@ -68,12 +69,12 @@
     <script>
         function validateForm() {
             if (document.forms["formMasuk"]["email"].value == "") {
-                alert("Email Tidak Boleh Kosong");
+                alert("Please fill in your email");
                 document.forms["formMasuk"]["email"].focus();
                 return false;
             }
             if (document.forms["formMasuk"]["password"].value == "") {
-                alert("Password Tidak Boleh Kosong");
+                alert("Please fill in your password");
                 document.forms["formMasuk"]["password"].focus();
                 return false;
             }

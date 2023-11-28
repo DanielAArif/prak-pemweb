@@ -27,12 +27,12 @@ mysqli_close($koneksi);
 </head>
 <body>
     <nav class="menu">
-        <a href="logout.php" class="logout-button">Logout</a>
+        <a href="logout.php" class="logout-button" onclick="return confirm('Are you sure want to logout?')">Logout</a>
         <ul>
-            <li><a href="home.php">Beranda</a></li>
+            <li><a href="home.php">Homepage</a></li>
             <li><a href="player.php">Players</a></li>
-            <li><a href="home.php#berita">Berita</a></li>
-            <li><a href="video.php">Video</a></li>
+            <li><a href="home.php#berita">News</a></li>
+            <li><a href="video.php">Videos</a></li>
             <li><a href="profil.php"><img src="../gambar/profil1.png"/></a></li>
         </ul>
     </nav>
@@ -47,7 +47,7 @@ mysqli_close($koneksi);
         <div class="player-table">
             <table >
                 <tr height="60px">
-                    <th class="player-pic" rowspan="4" width="250px"><img src="../gambar/gambarpemain/<?php echo $data_pemain['foto'] ?>" /></th>
+                    <th class="player-pic" rowspan="4" width="250px"><img src="<?php echo $data_pemain['foto'] ?>" style="background-color: #F05941"/></th>
                     <td><p>Player Details:</p></td>
                 </tr>
                 <tr height="60px">
@@ -65,7 +65,6 @@ mysqli_close($koneksi);
             </table>
             
         </div>
-        <div><button><a href="update_player.php?editid=<?php echo $data_pemain['no_punggung']; ?>">Edit</a></button></div>
         
     </div>
 
