@@ -42,13 +42,13 @@
 		$query = mysqli_query($koneksi, $update);
 		if($query){
 			?>
-				<script>alert('Data Berhasil Diubah!')
+				<script>alert('Update success!')
 				document.location="view_player&pemain.php";
 				</script>
 			<?php
 		}else{
             ?>
-                <script>alert('Data Gagal Diubah!')
+                <script>alert('Update Failed!')
                 document.location="view_player&pemain.php";
                 </script>
             <?php
